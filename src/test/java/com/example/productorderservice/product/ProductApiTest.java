@@ -4,8 +4,6 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 import com.example.productorderservice.ApiTest;
 import com.example.productorderservice.product.adapter.ProductRepository;
-import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,7 +38,7 @@ class ProductApiTest extends ApiTest {
         ProductSteps.상품등록요청(ProductSteps.상품등록요청_생성());
         final long productId = 1L;
 
-        final ExtractableResponse<Response> response = ProductSteps.상품수정요청(productId);
+        final var response = ProductSteps.상품수정요청(productId);
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
         assertThat(productRepository.findById(1L).get().getName()).isEqualTo("상품 수정");
