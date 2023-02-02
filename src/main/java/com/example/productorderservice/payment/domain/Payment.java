@@ -1,6 +1,7 @@
 package com.example.productorderservice.payment.domain;
 
 import com.example.productorderservice.order.domain.Order;
+import javax.persistence.Table;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
 @Entity
+@Table(name = "payments")
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public

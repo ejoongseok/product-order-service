@@ -1,6 +1,6 @@
 package com.example.productorderservice.payment.adapter;
 
 interface PaymentGateway {
-    void excute(int totalPrice, String cardNumber);
+    void execute(int totalPrice, String cardNumber);
 
 }
